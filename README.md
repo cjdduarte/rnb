@@ -38,7 +38,7 @@ Certifique-se de que o Docker e o Docker Compose estejam instalados no seu siste
    docker-compose up --build
    ```
 
-   Isso irá construir a imagem e iniciar o contêiner. A porta 5000 do contêiner será mapeada para a porta 5000 do host.
+   Isso irá construir a imagem nomeada como `rnb-app:latest` e iniciar o contêiner. A porta 5000 do contêiner será mapeada para a porta 5000 do host.
 
 3. **Acessar a aplicação:**
 
