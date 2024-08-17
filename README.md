@@ -1,7 +1,7 @@
 
 # RNB - Random Number Generator
 
-RNB (Random Number Generator) é uma aplicação web simples que permite gerar números aleatórios. Por padrão, a aplicação gera números aleatórios entre 1 e 100, mas você também pode escolher gerar números entre 1 e 18.
+RNB (Random Number Generator) é uma aplicação web simples que permite gerar números aleatórios. Por padrão, a aplicação gera números aleatórios entre 1 e 18, mas você pode escolher o intervalo desejado.
 
 ## Funcionalidades
 
@@ -10,8 +10,7 @@ RNB (Random Number Generator) é uma aplicação web simples que permite gerar n
 
 ## Tecnologias Utilizadas
 
-- **Flask:** Framework web usado para construir a aplicação backend.
-- **HTMX:** Biblioteca para permitir interações dinâmicas sem a necessidade de escrever JavaScript personalizado.
+- **Streamlit:** Framework usado para construir a aplicação frontend e backend.
 - **Docker:** Ferramenta usada para criar contêineres que facilitam o empacotamento e a execução da aplicação.
 - **Docker Compose:** Ferramenta para definir e gerenciar aplicativos Docker multi-contêiner.
 
@@ -38,11 +37,11 @@ Certifique-se de que o Docker e o Docker Compose estejam instalados no seu siste
    docker-compose up --build
    ```
 
-   Isso irá construir a imagem nomeada como `rnb-app:latest` e iniciar o contêiner. A porta 5000 do contêiner será mapeada para a porta 5000 do host.
+   Isso irá construir a imagem nomeada como `rnb-app:latest` e iniciar o contêiner. A porta 8000 do contêiner será mapeada para a porta 8000 do host.
 
 3. **Acessar a aplicação:**
 
-   Abra seu navegador e acesse `http://localhost:5000`. Você verá a interface do RNB para gerar números aleatórios.
+   Abra seu navegador e acesse `http://localhost:8000`. Você verá a interface do RNB para gerar números aleatórios.
 
 ### Gerenciamento do Contêiner com Docker Compose
 
@@ -66,7 +65,7 @@ Certifique-se de que o Docker e o Docker Compose estejam instalados no seu siste
 
 - **Rebuildar a imagem:**
 
-  Se fizer alterações no Dockerfile ou em arquivos fora do diretório `app`, será necessário rebuildar a imagem:
+  Se fizer alterações no Dockerfile ou em arquivos fora do diretório `src`, será necessário rebuildar a imagem:
 
   ```bash
   docker-compose up --build

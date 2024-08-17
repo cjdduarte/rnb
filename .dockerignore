@@ -1,0 +1,28 @@
+# Ignorar arquivos Python cacheados
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pdb
+
+# Ignorar diretórios do sistema
+*.DS_Store
+*.egg-info
+*.vscode/
+.idea/
+.env
+.venv
+
+# Ignorar arquivos de controle de versão
+.git/
+.gitignore
+
+# Ignorar arquivos de configuração locais
+*.swp
+*.swo
+
+# Ignorar arquivos e diretórios específicos do projeto
+.dockerignore
+docker-compose.yml
+README.md
+LICENSE

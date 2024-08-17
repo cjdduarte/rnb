@@ -1,10 +1,7 @@
 services:
   web:
     build: .
-    image: rnb-app:latest
     ports:
-      - "5000:5000"
+      - "8000:8000"
     volumes:
-      - ./app:/app
-    # scommand: python /app/main.py
-    command: gunicorn --bind 0.0.0.0:5000 main:app
+      - ./src:/app

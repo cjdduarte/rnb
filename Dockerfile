@@ -1,23 +1,17 @@
-# Use uma imagem base oficial do Python
+# Base image
 FROM python:3.11-slim
 
-# Define o diretório de trabalho dentro do contêiner
+# Set the working directory
 WORKDIR /app
 
-# Copia os arquivos de requisitos para o diretório de trabalho
+# Copy requirements.txt into the container
 COPY requirements.txt .
 
-# Instala as dependências
+# Install dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copia o código fonte da aplicação
-COPY app/ .
+# Copy the rest of the application code
+COPY src/ .
 
-# Exponha a porta em que a aplicação vai rodar
-EXPOSE 5000
-
-# Comando para rodar a aplicação
-#CMD ["python3", "main.py"]
-
-# Use Gunicorn como o servidor WSGI para produção
-CMD ["gunicorn", "--bind", "0.0.0.0:5000", "main:app"]
+# Command to run the app
+CMD ["streamlit", "run", "app.py", "--server.port=8000", "--server.address=0.0.0.0"]
