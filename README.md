@@ -1,7 +1,7 @@
 
 # RNB - Random Number Generator
 
-RNB (Random Number Generator) é uma aplicação web simples que permite gerar números aleatórios. Por padrão, a aplicação gera números aleatórios entre 1 e 18, mas você pode escolher o intervalo desejado.
+RNB (Random Number Generator) é uma aplicação web minimalista desenvolvida para gerar números aleatórios. Por padrão, a aplicação gera números aleatórios entre 1 e 18, mas você pode escolher qualquer intervalo desejado através dos campos de entrada.
 
 ## Funcionalidades
 
@@ -37,7 +37,7 @@ Certifique-se de que o Docker e o Docker Compose estejam instalados no seu siste
    docker-compose up --build
    ```
 
-   Isso irá construir a imagem nomeada como `rnb-app:latest` e iniciar o contêiner. A porta 8000 do contêiner será mapeada para a porta 8000 do host.
+   Isso irá construir a imagem nomeada como `rnb-app:latest` e iniciar o contêiner. A porta 8000 do contêiner será mapeada para a porta 8000 do host, mas você pode alterar essa porta no arquivo `docker-compose.yml` se necessário.
 
 3. **Acessar a aplicação:**
 
@@ -73,7 +73,14 @@ Certifique-se de que o Docker e o Docker Compose estejam instalados no seu siste
 
 ## Contribuições
 
-Contribuições são bem-vindas! Sinta-se à vontade para abrir issues e pull requests para melhorias e novas funcionalidades.
+Contribuições são bem-vindas! Para contribuir, siga os passos abaixo:
+- Faça um fork deste repositório.
+- Crie uma branch para sua feature ou correção (`git checkout -b feature/nome-da-feature`).
+- Commit suas alterações (`git commit -m 'Adiciona nova feature'`).
+- Faça o push para a branch (`git push origin feature/nome-da-feature`).
+- Abra um Pull Request.
+
+Sinta-se à vontade para abrir issues e pull requests para melhorias e novas funcionalidades.
 
 ## Licença
 
