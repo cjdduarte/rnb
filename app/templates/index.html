@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RNB - Random Number Generator</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://unpkg.com/htmx.org@1.9.12"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>RNB - Random Number Generator</h1>
+        <div id="number-display">Clique no botão para gerar um número</div>
+        <div>
+            <label for="range">Escolha o intervalo:</label>
+            <select id="range" name="range" hx-get="/generate" hx-target="#number-display" hx-trigger="change">
+                <option value="100" selected>1 a 100</option>
+                <option value="18">1 a 18</option>
+            </select>
+        </div>
+        <button hx-get="/generate" hx-target="#number-display">Gerar Número</button>
+    </div>
+</body>
+</html>
