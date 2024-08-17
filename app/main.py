@@ -9,8 +9,9 @@ def index():
 
 @app.route('/generate')
 def generate_number():
-    max_range = int(request.args.get('range', 100))
-    number = random.randint(1, max_range)
+    min_range = int(request.args.get('min', 1))
+    max_range = int(request.args.get('max', 100))
+    number = random.randint(min_range, max_range)
     return jsonify(str(number))
 
 if __name__ == "__main__":

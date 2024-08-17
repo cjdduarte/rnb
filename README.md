@@ -6,21 +6,22 @@ RNB (Random Number Generator) é uma aplicação web simples que permite gerar n
 ## Funcionalidades
 
 - **Gerar Números Aleatórios:** Clique no botão "Gerar Número" para gerar um número aleatório.
-- **Escolha do Intervalo:** Use o seletor para escolher entre gerar números de 1 a 100 ou de 1 a 18.
+- **Escolha do Intervalo:** Use os campos de texto para definir o intervalo desejado.
 
 ## Tecnologias Utilizadas
 
 - **Flask:** Framework web usado para construir a aplicação backend.
 - **HTMX:** Biblioteca para permitir interações dinâmicas sem a necessidade de escrever JavaScript personalizado.
 - **Docker:** Ferramenta usada para criar contêineres que facilitam o empacotamento e a execução da aplicação.
+- **Docker Compose:** Ferramenta para definir e gerenciar aplicativos Docker multi-contêiner.
 
 ## Como Executar a Aplicação
 
 ### Pré-requisitos
 
-Certifique-se de que o Docker esteja instalado no seu sistema. Se ainda não tiver o Docker instalado, você pode baixá-lo [aqui](https://www.docker.com/products/docker-desktop).
+Certifique-se de que o Docker e o Docker Compose estejam instalados no seu sistema. Se ainda não tiver o Docker instalado, você pode baixá-lo [aqui](https://www.docker.com/products/docker-desktop).
 
-### Passos para Rodar a Aplicação com Docker
+### Passos para Rodar a Aplicação com Docker Compose
 
 1. **Clone o repositório:**
 
@@ -29,61 +30,47 @@ Certifique-se de que o Docker esteja instalado no seu sistema. Se ainda não tiv
    cd rnb
    ```
 
-2. **Construir a imagem Docker:**
+2. **Construir e rodar o contêiner:**
 
-   Na raiz do projeto, execute o seguinte comando para construir a imagem Docker:
-
-   ```bash
-   docker build -t rnb-app .
-   ```
-
-3. **Rodar o contêiner:**
-
-   Para rodar a aplicação, execute:
+   Para construir a imagem e rodar o contêiner, execute:
 
    ```bash
-   docker run --name rnb-app-container -p 5000:5000 rnb-app
+   docker-compose up --build
    ```
 
-   Isso irá iniciar o contêiner e mapear a porta 5000 do contêiner para a porta 5000 do host.
+   Isso irá construir a imagem e iniciar o contêiner. A porta 5000 do contêiner será mapeada para a porta 5000 do host.
 
-4. **Acessar a aplicação:**
+3. **Acessar a aplicação:**
 
    Abra seu navegador e acesse `http://localhost:5000`. Você verá a interface do RNB para gerar números aleatórios.
 
-### Gerenciamento do Contêiner
+### Gerenciamento do Contêiner com Docker Compose
 
 - **Parar o contêiner:**
 
   Para parar a aplicação, execute:
 
   ```bash
-  docker stop rnb-app-container
+  docker-compose down
   ```
 
-- **Reiniciar o contêiner:**
+  Isso irá parar e remover o contêiner.
 
-  Para reiniciar o contêiner sem criar um novo, execute:
+- **Rodar novamente sem reconstruir:**
+
+  Se você não fez alterações significativas que exigem a reconstrução da imagem, pode rodar a aplicação novamente com:
 
   ```bash
-  docker start rnb-app-container
+  docker-compose up
   ```
 
-- **Remover o contêiner:**
+- **Rebuildar a imagem:**
 
-  Se você quiser remover o contêiner, execute:
+  Se fizer alterações no Dockerfile ou em arquivos fora do diretório `app`, será necessário rebuildar a imagem:
 
   ```bash
-  docker rm rnb-app-container
+  docker-compose up --build
   ```
-
-### Usando Docker com Remoção Automática
-
-Se preferir criar e remover automaticamente o contêiner a cada execução, use o seguinte comando:
-
-```bash
-docker run --rm -p 5000:5000 rnb-app
-```
 
 ## Contribuições
 
