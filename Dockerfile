@@ -17,4 +17,7 @@ COPY app/ .
 EXPOSE 5000
 
 # Comando para rodar a aplicação
-CMD ["python3", "main.py"]
+#CMD ["python3", "main.py"]
+
+# Use Gunicorn como o servidor WSGI para produção
+CMD ["gunicorn", "--bind", "0.0.0.0:5000", "main:app"]

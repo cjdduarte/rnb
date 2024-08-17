@@ -6,4 +6,5 @@ services:
       - "5000:5000"
     volumes:
       - ./app:/app
-    command: python /app/main.py
+    # scommand: python /app/main.py
+    command: gunicorn --bind 0.0.0.0:5000 main:app
